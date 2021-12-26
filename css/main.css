@@ -39,15 +39,15 @@ p{
         height: 30px;
     }
 
-    #contact-btn:focus{
+    #contact-btn:hover{
         height: 33px;
         width: 33px;
     }
 
-    #contact-btn:focus + #icon-bar {
+    #contact-btn:hover + #icon-bar {
         height: 300px;
     }
-    #contact-btn:focus + #icon-bar .icon-cont{
+    #contact-btn:hover + #icon-bar .icon-cont{
         display: flex;
     }
 
