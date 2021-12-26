@@ -3,7 +3,7 @@ html,body{
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Italianno', cursive;
+    font-family: 'Playfair Display', serif;
     margin: 0;
     color: #c7c078;
     background-color: #101010;
@@ -12,7 +12,7 @@ html,body{
     box-sizing: border-box;
 }
 h1,h2,h3,h4,h5,h6{
-    font-family: 'Lato', sans-serif;
+    font-family: 'PT Sans', sans-serif;
 }
 
 p{
@@ -39,15 +39,15 @@ p{
         height: 30px;
     }
 
-    #contact-btn:hover{
+    #contact-btn:focus{
         height: 33px;
         width: 33px;
     }
 
-    #contact-btn:hover + #icon-bar {
+    #contact-btn:focus + #icon-bar {
         height: 300px;
     }
-    #contact-btn:hover + #icon-bar .icon-cont{
+    #contact-btn:focus + #icon-bar .icon-cont{
         display: flex;
     }
 
@@ -383,6 +383,14 @@ footer h6{
         margin: 10px auto;
     }
 }
+
+@media screen and (max-width: 467px){
+    .col{
+        min-width: 100%;
+        width: auto;
+    }
+}
+
 
 .col img{
     max-width: 100%;
