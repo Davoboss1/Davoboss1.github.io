@@ -1,3 +1,0 @@
-[1216/110204.579:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
-[1216/110204.616:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Bola\AppData\Local\CryptoTab Browser\User Data\Crashpad\attachments\d40e2afe-2251-4aa1-a6f5-432fa0f64f93: The system cannot find the path specified. (0x3)
-[1216/110204.645:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Bola\AppData\Local\CryptoTab Browser\User Data\Crashpad\attachments\e647112d-3d0c-47b7-a48f-2c6514cd3035: The system cannot find the path specified. (0x3)
