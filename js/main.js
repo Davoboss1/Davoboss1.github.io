@@ -52,6 +52,9 @@
         });
         observer.observe(element);
     });
+    }else{
+        document.querySelectorAll(".profile-container,.view-panel,.side-container,.col").forEach((element) => element.visibility = "visible" );
+
     }
 
 
