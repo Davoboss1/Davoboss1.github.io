@@ -245,6 +245,7 @@ p,li {
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent; 
   -moz-text-fill-color: transparent;
+  text-shadow: 0px 0px #00000000;
 }
 
 .inner-profile > p{
