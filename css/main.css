@@ -8,6 +8,7 @@ body {
   margin: 0;
   color: #c7c078;
   background-color: #101010;
+  background-image: url("../images/background1.jpg");
 }
 * {
   box-sizing: border-box;
@@ -17,16 +18,17 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+li {
   font-family: "PT Sans", sans-serif;
 }
 
-p {
+p,li {
   font-size: small;
 }
 .navbar {
   position: fixed;
-  z-index: 1;
+  z-index: 5;
   display: flex;
   flex-wrap: wrap;
   padding-top: 10px;
@@ -105,7 +107,7 @@ p {
 }
 
 .side-container {
-  background-color: rgb(19, 19, 19);
+  background-color: #060606;
   color: white;
   padding: 10px 0;
 }
@@ -113,7 +115,11 @@ p {
 @media screen and (max-width: 768px) {
   .main-container {
     width: 100%;
-    padding: 10%;
+    padding: 10% 5%;
+  }
+
+  .info-container > div{
+    width: 100% !important;
   }
 
   .side-container {
@@ -128,6 +134,145 @@ p {
     position: absolute;
     width: 100%;
   }
+}
+
+.info-container{
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.info-container > div{
+  width: 45%;
+  background-color: #0e0e0e;
+  padding: 0px 30px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.profile-container{
+  position: relative;
+  padding-top: 50px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+
+}
+
+.image-view{
+  position: relative;
+  padding-bottom: 10px;
+}
+
+@keyframes fadein {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@keyframes slide {
+  from{
+    width: 0;
+  }
+  to{
+    width: 100%;
+    height: auto;
+  }
+}
+@keyframes slideout {
+  from{
+    width: 100%;
+  }
+  to{
+    width: 0;
+    height: 0;
+  }
+}
+
+.image-view > img.active{
+  transition: opacity 1s;
+  position: relative;
+  z-index: 1;
+  opacity: 1;
+}
+
+.image-view > img{
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  opacity: 0;
+}
+
+.arrow-left-btn{
+  z-index: 2;
+  background-image: url("../images/arrow.svg");
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+}
+.arrow-right-btn{
+  z-index: 2;
+  background-image: url("../images/arrow.svg");
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.d-none{
+  display: none;
+}
+
+.inner-profile{
+  background: #ccc36f;
+  background: linear-gradient(180deg, rgba(121,121,120,1) 0%, rgba(254,248,192,1) 24%, rgba(204,195,111,1) 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+
+.inner-profile > p{
+  line-height: 25px;
+  background: linear-gradient(to right, yellow, #00a1ff);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  transition: 0.5s font-size;
+}
+
+.inner-profile > p:hover{
+  -webkit-background-clip: none;
+  -moz-background-clip: none;
+  font-size: large;
+}
+
+.line-above{
+  position: absolute;
+  top: 70px;
+  height: 250px;
+  width: 25%;
+  right: 0;
+  border-top: 1px dashed #c7c078;
+  border-right: 1px dashed #c7c078;
+}
+
+.inner-profile > p{
+  max-width: 700px;
+  padding-left: 25px;
+  border-left: 1px dotted #c7c078;
 }
 
 @media screen and (min-width: 769px) {
@@ -158,12 +303,19 @@ p {
 }
 
 .view-panel {
+  position: relative;
   display: flex;
   border-radius: 5px;
   box-shadow: 4px 4px 7px #0c0c0c;
   margin: 20px auto;
   min-height: 250px;
   max-width: 850px;
+  background-color: #060606;
+  padding: 20px;
+}
+
+.view-panel h3{
+  margin-top: 0;
 }
 
 .view-panel.reverse {
@@ -173,7 +325,6 @@ p {
 
 .view-panel img {
   border-radius: 5px;
-  margin-top: 7%;
   height: 250px;
   max-width: 200px;
 }
@@ -221,7 +372,7 @@ p {
   border-radius: 3px;
   border: 1px solid #ffeb5f;
   color: white;
-  background-color: rgb(19, 19, 19);
+  background-color: #060606;
   padding-left: 5px;
   max-width: 350px;
 }
@@ -229,7 +380,7 @@ p {
 .input-container textarea {
   display: block;
   margin: 15px auto;
-  background-color: rgb(19, 19, 19);
+  background-color: #060606;
   border-radius: 3px;
   width: 80%;
   border: 1px solid #ffeb5f;
@@ -244,7 +395,7 @@ p {
   border: 1px solid #ffeb5f;
   border-radius: 5px;
   padding: 10px 25px;
-  background-color: rgb(19, 19, 19);
+  background-color: #060606;
   margin: 15px auto;
   color: white;
 }
@@ -274,9 +425,15 @@ p {
   border: 1px solid #ffeb5f;
   border-radius: 5px;
   padding: 10px 25px;
-  background-color: rgb(19, 19, 19);
+  background-color: #060606;
   color: #ffeb5f;
   font-size: 12px;
+}
+
+.button.disabled{
+  border: 1px solid #302c12;
+  color: #302c12;
+  pointer-events: none;
 }
 
 .button:hover {
@@ -289,7 +446,7 @@ p {
 }
 
 footer {
-  background-color: rgb(19, 19, 19);
+  background-color: #060606;
 }
 
 footer h5 {
@@ -402,8 +559,17 @@ small {
   margin: 0;
 }
 
+.mt-20px{
+  margin-top: 20px;
+}
+
 .view-panel.column {
   flex-direction: column;
+}
+
+.view-panel.column > div{
+  display: flex;
+  flex-wrap: wrap;
 }
 
 table {
@@ -499,4 +665,97 @@ td {
   width: 100px;
   height: 100px;
   border-radius: 25px;
+}
+
+/* animations */
+
+@keyframes slideinright{
+  0% {
+    -webkit-transform: translateX(2000px) scale(0.7);
+    transform: translateX(2000px) scale(0.7);
+    opacity: 0;
+  }
+
+  80% {
+    -webkit-transform: translateX(0px) scale(0.7);
+    transform: translateX(0px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideinleft{
+  0% {
+    -webkit-transform: translateX(-2000px) scale(0.7);
+    transform: translateX(-2000px) scale(0.7);
+    opacity: 0; 
+  }
+
+  80% {
+    -webkit-transform: translateX(0px) scale(0.7);
+    transform: translateX(0px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes grow{
+  from{
+    transform: scale(0);
+  }
+
+  to{
+    transform: scale(1);
+  }
+}
+
+.profile-container,.view-panel,.col{
+  visibility: hidden;
+}
+
+.profile-container.animate{
+  animation: 1s slideinleft linear;
+  animation-fill-mode: both;
+  visibility: visible;
+  overflow: hidden;
+}
+
+.view-panel.animate{
+  animation: 1s slideinleft linear;
+  animation-fill-mode: both;
+  overflow: hidden;
+  visibility: visible;
+
+}
+
+.view-panel.column.animate{
+  animation: none !important;
+}
+
+.col.animate{
+  animation: 0.5s grow linear;
+  animation-fill-mode: both;
+  visibility: visible;
+}
+
+@media screen and (max-width: 768px) {
+  .side-container.animate{
+    animation: 1s slideinleft linear;
+    animation-fill-mode: both;
+    overflow: hidden;
+    visibility: visible;
+  }
+  .side-container{
+    visibility: hidden;
+  }
 }
