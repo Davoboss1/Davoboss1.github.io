@@ -1,0 +1,54 @@
+.display-view{
+    padding-bottom: 0;
+    padding-top: 80px;
+    height: 100%;
+    display: flex;
+}
+
+.container-main{
+    width: 60%;
+    height: 100%;
+}
+
+.left-side,.right-side{
+    width: 20%;
+    height: 100%;
+}
+
+.blur-bg{
+
+    backdrop-filter: blur(3px);
+}
+
+.container-main > .item{
+    height: 100%;
+    display: none;
+}
+
+.container-main .active{
+    display: block;
+}
+
+.container-main > .indicators{
+    display: flex;
+    justify-content: space-around;
+}
+
+.container-main > .indicators > div{
+    background-color: rgb(97, 97, 97);
+    height: 3px;
+    border-radius: 10px;
+    display: inline-block;
+    width: 19%;
+}
+
+.container-main > .indicators > div > span{
+    background-color: white;
+    width: 0%;
+    height: 100%;
+    display: block;
+}
+
+.profile-container,.view-panel,.col{
+    visibility: visible;
+}
