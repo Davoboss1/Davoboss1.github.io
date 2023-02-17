@@ -1,5 +1,5 @@
 //Writes texts in the message text area.
- const timer = ms => new Promise(res => setTimeout(res, ms));
+ const texttimer = ms => new Promise(res => setTimeout(res, ms));
  var messages = ["Hello, we would like to hire you....", "I just wanna say hi...", "I want to collaborate with you on a project...", "Nice job!!!", "I need help on a project....", "You have a bug in one of your projects...."];
  var msgBox = document.getElementById("messageBox");
 
@@ -10,9 +10,9 @@
          for (var eachChar in curMsg) {
              let msg = curMsg[eachChar];
              msgBox.placeholder += msg;
-             await timer(100);
+             await texttimer(100);
          }
-         await timer(3000);
+         await texttimer(3000);
      }
      load();
  };
@@ -40,22 +40,7 @@
      }
  });
 
- if (typeof(IntersectionObserver) !== "undefined") {
-    document.querySelectorAll(".profile-container,.view-panel,.side-container,.col").forEach((element) => {
-        let observer = new IntersectionObserver((entries, observer)=>{
-            entries.forEach((entry)=>{
-                if(entry.isIntersecting){
-                    entry.target.classList.add("animate");
-                    observer.unobserve(entry.target);
-                }
-            });
-        });
-        observer.observe(element);
-    });
-    }else{
-        document.querySelectorAll(".profile-container,.view-panel,.side-container,.col").forEach((element) => element.style.visibility = "visible" );
-
-    }
+ 
 
 
  //Email Js initialization

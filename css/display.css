@@ -1,54 +1,93 @@
-.display-view{
+.display-view {
     padding-bottom: 0;
     padding-top: 80px;
     height: 100%;
     display: flex;
-}
-
-.container-main{
-    width: 60%;
-    height: 100%;
-}
-
-.left-side,.right-side{
-    width: 20%;
-    height: 100%;
-}
-
-.blur-bg{
-
+    overflow-x: hidden;
+    -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
+
 }
 
-.container-main > .item{
+.container-main {
+    width: 70%;
+    height: 100%;
+}
+
+.left-side,
+.right-side {
+    width: 15%;
+    height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .container-main {
+        width: 80%;
+        height: 100%;
+    }
+
+    .left-side,
+    .right-side {
+        width: 10%;
+        height: 100%;
+    }
+}
+
+.blur-bg {}
+
+.container-main>.item {
     height: 100%;
     display: none;
 }
 
-.container-main .active{
+.container-main .active {
     display: block;
 }
 
-.container-main > .indicators{
+.container-main>.indicators {
     display: flex;
     justify-content: space-around;
 }
 
-.container-main > .indicators > div{
+.container-main>.indicators>div {
     background-color: rgb(97, 97, 97);
     height: 3px;
     border-radius: 10px;
     display: inline-block;
-    width: 19%;
+    width: 13%;
 }
 
-.container-main > .indicators > div > span{
+.container-main>.indicators>div>span {
     background-color: white;
     width: 0%;
     height: 100%;
     display: block;
 }
 
-.profile-container,.view-panel,.col{
+.profile-container,
+.view-panel,
+.col {
     visibility: visible;
+}
+
+@keyframes rollIn {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+        transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.rollIn {
+    -webkit-animation-name: rollIn;
+    animation-name: rollIn;
+
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }

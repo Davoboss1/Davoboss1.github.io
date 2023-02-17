@@ -9,6 +9,7 @@ body {
   color: #c7c078;
   background-color: #101010;
   background-image: url("../images/background1.jpg");
+  
 }
 * {
   box-sizing: border-box;
@@ -51,7 +52,7 @@ p,li {
   }
 
   #contact-btn:hover + #icon-bar {
-    height: 300px;
+    height: 360px;
   }
   #contact-btn:hover + #icon-bar .icon-cont {
     display: flex;
