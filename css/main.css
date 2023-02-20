@@ -81,7 +81,7 @@ p,li {
     display: flex;
   }
   #icon-bar:hover {
-    height: 300px;
+    height: 360px;
   }
 }
 
@@ -98,6 +98,10 @@ p,li {
 
   #icon-bar small {
     display: none;
+  }
+
+  #icon-bar .icon-cont {
+    margin-top: auto;
   }
 }
 
