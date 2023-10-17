@@ -7,11 +7,8 @@ body {
   font-family: "Playfair Display", serif;
   margin: 0;
   color: #c7c078;
-  background-color: #101010;
-  background-image: url("../images/background1.jpg");
 
 }
-
 * {
   box-sizing: border-box;
 }
@@ -47,80 +44,31 @@ li {
   background-color: rgb(19, 19, 19);
 }
 
-@media screen and (max-width: 550px) {
-  #contact-btn {
-    margin-left: auto;
-    margin-right: 15px;
-    width: 30px;
-    height: 30px;
-  }
 
-  #contact-btn:hover {
-    height: 33px;
-    width: 33px;
-  }
-
-  #contact-btn:hover+#icon-bar {
-    height: 360px;
-  }
-
-  #contact-btn:hover+#icon-bar .icon-cont {
-    display: flex;
-  }
-
-  #icon-bar {
-    display: flex;
-    flex-direction: column;
-    flex-basis: 100%;
-    transition: height 200ms linear;
-    height: 0;
-  }
-
-  #icon-bar .icon-cont {
-    display: none;
-    margin: 10px auto;
-    text-decoration: none;
-  }
-
-  #icon-bar small {
-    margin: auto 10px;
-    color: #c7c078;
-  }
-
-  #icon-bar:hover .icon-cont {
-    display: flex;
-  }
-
-  #icon-bar:hover {
-    height: 360px;
-  }
+#icon-bar {
+  position: fixed;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  background-color: #060606;
+  top: 50%;
+  transform: translate(0, -50%);
+  padding: 10px 5px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  right: 0;
+  opacity: 0.5;
 }
 
-@media screen and (min-width: 551px) {
-  #contact-btn {
-    display: none;
-  }
-
-  #icon-bar {
-    position: fixed;
-    z-index: 5;
-    display: flex;
-    flex-direction: column;
-    background-color: #060606;
-    top: 50%;
-    transform: translate(0, -50%);
-    padding: 10px 5px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    right: 0;
-  }
-
-  #icon-bar a {
-    margin-top: 5px;
-    margin-bottom: 5px;
-  }
-
+#icon-bar:hover,#icon-bar:active,#icon-bar:focus {
+  opacity: 1;
 }
+
+#icon-bar a {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 
 .main-text {
   color: #ffeb5f;
@@ -176,6 +124,11 @@ li {
 .image-view {
   position: relative;
   padding-bottom: 10px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @keyframes fadein {
@@ -206,23 +159,35 @@ li {
 
   to {
     width: 0;
-    height: 0;
+  max-width: 400px;
+  height: 0;
   }
 }
 
-.image-view>img.active {
+.info-view{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image-view img.active {
   transition: opacity 1s;
   position: relative;
   z-index: 1;
   opacity: 1;
 }
 
-.image-view>img {
+.image-view img {
   position: absolute;
   left: 0;
   top: 0;
   z-index: 0;
   opacity: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .arrow-left-btn {
@@ -363,10 +328,6 @@ li {
   border-left: 1px dotted #c7c078;
 }
 
-@media screen and (min-width: 769px) {
-  .main-container {}
-
-}
 
 .view-panel {
   position: relative;
@@ -554,11 +515,11 @@ footer {
 footer h5 {
   margin: 0;
   margin-top: 10px;
-  font-size: 25px;
+  font-size: 22px;
 }
 
 footer h6 {
-  font-size: 20px;
+  font-size: 18px;
   margin: 10px 0;
 }
 
@@ -585,6 +546,10 @@ footer h6 {
 
 .em {
   background: url("../icons/email.svg");
+}
+
+.wa {
+  background: url("../icons/whatsapp.svg");
 }
 
 .icon {
@@ -630,10 +595,10 @@ footer h6 {
 }
 
 .col {
-  min-width: 300px;
-  width: 45%;
-  float: left;
-  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 !important;
+  width: 100%;
 }
 
 @media screen and (max-width: 1000px) {
@@ -659,6 +624,8 @@ small {
   display: block;
   text-align: center;
   margin: 5px;
+  padding: 5px;
+  max-width: 400px;
 }
 
 .m-0 {
@@ -671,11 +638,6 @@ small {
 
 .view-panel.column {
   flex-direction: column;
-}
-
-.view-panel.column>div {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 table {
@@ -828,9 +790,7 @@ td {
   }
 }
 
-.profile-container,
-.view-panel,
-.col {
+.profile-container{
   visibility: hidden;
 }
 

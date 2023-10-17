@@ -18,30 +18,6 @@
  };
  load();
 
- document.querySelectorAll(".arrow-right-btn").forEach((element) => {
-     element.onclick = (e) => {
-         let parent = element.parentElement;
-         let img = parent.querySelector("img.active");
-         if (img.nextElementSibling !== null) {
-             img.classList.remove("active");
-             img.nextElementSibling.classList.add("active");
-         }
-     }
- });
-
- document.querySelectorAll(".arrow-left-btn").forEach((element) => {
-     element.onclick = (e) => {
-         let parent = element.parentElement;
-         let img = parent.querySelector("img.active");
-         if (img.previousElementSibling.tagName.toLocaleLowerCase() == "img") {
-             img.classList.remove("active");
-             img.previousElementSibling.classList.add("active");
-         }
-     }
- });
-
- 
-
 
  //Email Js initialization
 (function () {
@@ -67,3 +43,56 @@
         });
     });
 })();
+
+var background_images = [
+    "images/bg.gif",
+    "images/bg1.gif",
+    "images/bg2.gif",
+    "images/bg3.gif",
+]
+var bg_image = background_images[Math.floor(Math.random() * background_images.length)];
+document.querySelector("body").style.backgroundImage = `url(${bg_image})`;
+
+var projects = [
+    {
+        images: ['images/id.png','images/id1.png'],
+        title: "Interior Design Website",
+        description: 'A design clone of an interior design website',
+        github_link: 'https://github.com/Davoboss1/InteriorDesign',
+        preview_link: 'http://interno.infinityfreeapp.com'
+    },
+    {
+        images: ['images/hms.png','images/hms1.png','images/hms2.png'],
+        title: "Hospital Management System",
+        description: 'A web application that handles activities of a hospital.',
+        github_link: '',
+        preview_link: ''
+    },
+    {
+        images: ['images/schooled.png'],
+        title: "Schooled",
+        description: "A school management website. That allows you to manage the information and data of schools, parents, teachers, admins and students.",
+        github_link: 'https://github.com/Davoboss1/Schooled',
+        preview_link: 'http://schooled.pythonanywhere.com'
+    },
+    {
+        images: ['images/fm.png','images/fm1.png'],
+        title: "Fetch Mail",
+        description: "Read and scan some personal information directly from your gmail attachment.",
+        github_link: '',
+        preview_link: ''
+    },
+    {
+        images: ['images/mf.jpg','images/mf1.jpg','images/mf2.jpg','images/mf3.jpg'],
+        title: "MediaFindzz",
+        description: "A cross-platform mobile application that lets you download varieties of media e.g movies, tv shows, music e.t.c for free from different sources.",
+        github_link: 'https://github.com/Davoboss1/Mediafindzz',
+        preview_link: ''
+    },
+];
+
+document.addEventListener('alpine:init', function(){
+    Alpine.data('main', (_projects = projects) => ({
+        projects: _projects
+    }))
+});
