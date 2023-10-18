@@ -4,7 +4,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: "Playfair Display", serif;
+  font-family: 'Tilt Neon', sans-serif;
   margin: 0;
   color: #c7c078;
 
@@ -20,7 +20,7 @@ h4,
 h5,
 h6,
 li {
-  font-family: "PT Sans", sans-serif;
+  font-family: 'Tilt Neon', sans-serif;
 }
 
 p,
@@ -386,12 +386,14 @@ li {
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
-  max-width: 100px;
+  max-width: 115px;
+  padding: 10px;
 }
 
 .skill > h4{
   word-break: break-all;
   margin: 0;
+  margin-top: 5px;
 }
 
 @media screen and (max-width: 1024px) {
