@@ -16,10 +16,10 @@
         David Akinfenwa, The software developer to meet.
     </title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-    <script defer src="js/alpine.min.js" ></script>
+    <script defer src="js/alpine.min.js"></script>
 </head>
 
 <body onclick="">
@@ -199,14 +199,15 @@
                 <div class="col">
                     <div class="image-view" x-data="{activeIndex: 0}">
                         <button class="arrow-left-btn" @click="if(activeIndex > 0){activeIndex-=1}"></button>
-                        <button class="arrow-right-btn" @click="if(activeIndex < project.images.length-1){ activeIndex+=1}"></button>
+                        <button class="arrow-right-btn"
+                            @click="if(activeIndex < project.images.length-1){ activeIndex+=1}"></button>
                         <template x-for="(image,index) in project.images">
-                            <img :class="index === activeIndex && 'active'" :src="image" >
+                            <img :class="index === activeIndex && 'active'" :src="image">
                         </template>
                     </div>
                     <div class="info-view">
                         <h3 x-text="project.title"></h3>
-                        <small x-text="project.description">  </small>
+                        <small x-text="project.description"> </small>
                         <div>
                             <a :href="project.github_link" :class="`button ${project.github_link || 'disabled'}`"
                                 style="width: 100%; max-width: 200px; margin: 10px auto;" target="_blank">View on
@@ -238,12 +239,27 @@
                 <button type="submit" id="submit-btn">Send Message</button>
             </form>
         </div>
+
     </div>
 
     <footer id="footer-lg">
+        <!-- Display visitors counter -->
+        <div class="text-center" id="sfcawwfludseprw3lduzckq1y4j8719r2k1"></div>
+        <script type="text/javascript"
+            src="https://counter7.optistats.ovh/private/counter.js?c=awwfludseprw3lduzckq1y4j8719r2k1&down=async"
+            async></script>
+        <noscript>    
+            <a href="https://www.freecounterstat.com" title="free website counter">
+            <img src="https://counter7.optistats.ovh/private/freecounterstat.php?c=awwfludseprw3lduzckq1y4j8719r2k1"
+            border="0" title="free website counter" alt="free website counter"></a>
+        </noscript>
+        <!-- Display visitors counter end -->
+        
+        
         <h5 class="text-center">Designed by David Akinfenwa.</h5>
         <h6 class="text-center" style="padding: 0;">Checkout more of my works on <a href="https://github.com/Davoboss1"
                 target="_blank" style="color: rgb(245, 255, 100);">Github</a></h6>
+
     </footer>
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
